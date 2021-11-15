@@ -80,16 +80,16 @@ obj := map[string]int{"one": 1, "two": 2}
 obj2 := obj
 
 fmt.Printf("(obj)  %v\n(obj2) %v\n\n",
-obj,  // mapcasegen[one:1 two:2]
-obj2, // mapcasegen[one:1 two:2]
+obj,  // map[one:1 two:2]
+obj2, // map[one:1 two:2]
 )
 
 obj2["three"] = 3
 
 fmt.Printf("(obj2) %v\n", obj2)
-// mapcasegen[one:1 three:3 two:2] <-- ✅
+// map[one:1 three:3 two:2] <-- ✅
 fmt.Printf("(obj)  %v\n", obj)
-// mapcasegen[one:1 three:3 two:2] <-- ❌
+// map[one:1 three:3 two:2] <-- ❌
 ```
 
 [Run this code in GoPlayground](https://play.golang.org/p/cLd5MJEagSI)
@@ -124,10 +124,10 @@ shallowClone["flag"] = "🇮🇹"
 shallowClone["country"].(Map)["city"] = "Roma"
 
 fmt.Printf("%v\n", shallowClone)
-// mapcasegen[country:mapcasegen[city:Roma] flag:🇮🇹] <-- ✅
+// map[country:map[city:Roma] flag:🇮🇹] <-- ✅
 
 fmt.Printf("%v\n", nestedMap)
-// mapcasegen[country:mapcasegen[city:Roma] flag:🇫🇷] <-- ❌
+// map[country:map[city:Roma] flag:🇫🇷] <-- ❌
 
 fmt.Printf("%p\n", nestedMap["country"]) // 0xc0000121e0
 fmt.Printf("%p\n", shallowClone["country"]) // 0xc0000121e0
@@ -145,8 +145,8 @@ Example:
 deepClone := deepcopy.Map(nestedMap).Clone()
 
 fmt.Printf("%v\n", deepClone)
-// mapcasegen[country:mapcasegen[city:Roma] flag:🇮🇹] <-- ✅
+// map[country:map[city:Roma] flag:🇮🇹] <-- ✅
 
 fmt.Printf("%v\n", nestedMap)
-// mapcasegen[country:mapcasegen[city:Paris] flag:🇫🇷] <-- ✅
+// map[country:map[city:Paris] flag:🇫🇷] <-- ✅
 ```
