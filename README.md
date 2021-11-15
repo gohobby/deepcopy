@@ -3,7 +3,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/gohobby/deepcopy.svg)](https://pkg.go.dev/github.com/gohobby/deepcopy)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gohobby/deepcopy)](https://goreportcard.com/report/github.com/gohobby/deepcopy)
 [![Go Cover](https://gocover.io/_badge/github.com/gohobby/deepcopy)](https://gocover.io/github.com/gohobby/deepcopy)
-[![Github Action Test](https://github.com/gohobby/docs/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/gohobby/deepcopy/actions/workflows/golangci-lint.yml)
+[![Test](https://github.com/gohobby/deepcopy/actions/workflows/test.yml/badge.svg)](https://github.com/gohobby/deepcopy/actions/workflows/test.yml)
 
 DeepCopy helps you create deep copies (clones) of your maps and slices.
 Create deep copies (clones) of your objects
