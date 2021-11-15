@@ -7,6 +7,7 @@
 
 DeepCopy helps you create deep copies (clones) of your maps and slices.
 Create deep copies (clones) of your objects
+
 The package is based on [type assertions](https://golang.org/ref/spec#Type_assertions) and does not use reflection.
 
 ## Installation
