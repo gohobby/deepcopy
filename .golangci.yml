@@ -9,6 +9,7 @@ linters:
     - dogsled
     - dupl
     - errcheck
+    - exportloopref
     - gochecknoinits
     - gocritic
     - gofmt
@@ -18,13 +19,11 @@ linters:
     - gosimple
     - govet
     - ineffassign
-    - interfacer
     - misspell
     - nakedret
     - noctx
     - nolintlint
     - rowserrcheck
-    - scopelint
     - staticcheck
     - structcheck
     - typecheck
@@ -48,6 +47,7 @@ linters:
 #    - goerr113
 #    - golint
 #    - gomnd
+#    - interfacer
 #    - lll
 #    - maligned
 #    - nestif
