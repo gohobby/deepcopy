@@ -36,18 +36,18 @@ var allType = Statement{
 func main() {
 	path, err := os.Getwd()
 	if err != nil {
-		log.Println(err)
+		log.Panicln(err)
 	}
 
 	file, err := os.Create(fmt.Sprintf("%s/%s", path, "deepcopy.go"))
 	if err != nil {
-		log.Fatalln(err)
+		log.Panicln(err)
 	}
 	defer file.Close()
 
 	err = render(file)
 	if err != nil {
-		log.Fatalln(err)
+		log.Panicln(err)
 	}
 }
 
