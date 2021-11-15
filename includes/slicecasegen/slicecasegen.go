@@ -1,7 +1,7 @@
 package slicecasegen
 
 import (
-	"deepcopy/includes/jenutils"
+	"github.com/gohobby/deepcopy/includes/jenutils"
 
 	. "github.com/dave/jennifer/jen"
 )

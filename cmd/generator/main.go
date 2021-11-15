@@ -1,14 +1,15 @@
 package main
 
 import (
-	"deepcopy/includes/jenutils"
+	
 	"fmt"
 	"io"
 	"log"
 	"os"
 
-	"deepcopy/includes/mapcasegen"
-	"deepcopy/includes/slicecasegen"
+	"github.com/gohobby/deepcopy/includes/jenutils"
+	"github.com/gohobby/deepcopy/includes/mapcasegen"
+	"github.com/gohobby/deepcopy/includes/slicecasegen"
 
 	. "github.com/dave/jennifer/jen"
 )
