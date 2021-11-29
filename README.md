@@ -16,7 +16,7 @@ Install DeepCopy with the [`go get`](https://pkg.go.dev/cmd/go#hdr-Add_dependenc
 command:
 
 ```shell
-go get -u github.con/gohobby/deepcopy
+go get -u github.com/gohobby/deepcopy
 ```
 
 ## How it works
