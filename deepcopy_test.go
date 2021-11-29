@@ -536,6 +536,35 @@ func TestDeepCopy_Pointer(t *testing.T) {
 	assert.Equal(t, expectedOriginal, originalMap, "Original was mutated.")
 }
 
+type NestedMap map[string]interface{}
+
+func (n NestedMap) DeepCopy() interface{} {
+	clone := make(NestedMap, len(n))
+
+	for k, v := range n {
+		clone[k] = DeepCopy(v)
+	}
+
+	return clone
+}
+
+func TestDeepCopy_Copyable_NestedMap(t *testing.T) {
+	originalMap := NestedMap{"code": "FR", "country": NestedMap{"city": "Paris"}}
+	expectedOriginal := NestedMap{"code": "FR", "country": NestedMap{"city": "Paris"}}
+	expectedCopy := NestedMap{"code": "IT", "country": NestedMap{"city": "Roma"}}
+	transformer := func(m map[string]interface{}) NestedMap {
+		m["code"] = "IT"
+		m["country"].(NestedMap)["city"] = "Roma"
+
+		return m
+	}
+
+	clone := Map(originalMap).Clone()
+
+	assert.Equal(t, expectedCopy, transformer(clone), "DeepCopy was not mutated.")
+	assert.Equal(t, expectedOriginal, originalMap, "Original was mutated.")
+}
+
 func BenchmarkCopyableMap(b *testing.B) {
 	m := map[string]interface{}{
 		"foo": []interface{}{
