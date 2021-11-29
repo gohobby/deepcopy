@@ -44,6 +44,77 @@ s := []interface{}{1, 2, &m}
 cloneSlice := deepcopy.Slice(s).Clone() // []interface{}
 ```
 
+To copy your custom types, implement the `Copyable` interface and define your own deep copy function:
+
+```go
+type Map map[string]interface{}
+
+func (n Map) DeepCopy() interface{} {
+	clone := make(Map, len(n))
+
+	for k, v := range n {
+		clone[k] = deepcopy.DeepCopy(v)
+	}
+
+	return clone
+}
+```
+
+<details><summary>Example</summary>
+<p>
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/gohobby/deepcopy"
+)
+
+type Map map[string]interface{}
+
+func (n Map) DeepCopy() interface{} {
+	clone := make(Map, len(n))
+
+	for k, v := range n {
+		clone[k] = deepcopy.DeepCopy(v)
+	}
+
+	return clone
+}
+
+var nestedMap = Map{
+	"flag": "🇫🇷",
+	"country": Map{
+		"city": "Paris",
+	},
+}
+
+func main() {
+	// Deep Copy
+	deepClone := nestedMap.DeepCopy().(Map)
+
+	// Change of the cloned object
+	deepClone["flag"] = "🇮🇹"
+	deepClone["country"].(Map)["city"] = "Roma"
+
+	fmt.Printf("%#v\n", deepClone)
+	// main.Map{"country":main.Map{"city":"Roma"}, "flag":"🇮🇹"} <-- ✅
+
+	fmt.Printf("%#v\n\n", nestedMap)
+	// main.Map{"country":main.Map{"city":"Paris"}, "flag":"🇫🇷"} <-- ✅
+
+	fmt.Printf("%p\n", deepClone["country"]) // 0xc000012240
+	fmt.Printf("%p\n", nestedMap["country"]) // 0xc0000121e0
+}
+```
+
+[Run this code in GoPlayground](https://play.golang.org/p/YKUX6pMD44H)
+
+</p>
+</details>
+
 ## Why?
 
 ### Mutability
