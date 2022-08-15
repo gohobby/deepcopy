@@ -191,3 +191,13 @@ func ExampleDeepCopy() {
 	//	clone[k] = deepCopy(v).(interface{})
 	// }
 }
+
+func ExampleInterfaceCopy() {
+	c := InterfaceCopy(jen.Map(jen.String()).Interface(), jen.Id("origin"), jen.Id("clone"), jen.Id("deepCopy"))
+	fmt.Printf("%s", c.GoString())
+	// Output:
+	// clone := make(map[string]interface{}, len(origin))
+	// for k, v := range origin {
+	//	clone[k] = deepCopy(v)
+	// }
+}
