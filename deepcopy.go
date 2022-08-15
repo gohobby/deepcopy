@@ -274,7 +274,7 @@ func DeepCopy(object interface{}) interface{} {
 		clone := make(map[string]interface{}, len(value))
 
 		for k, v := range value {
-			clone[k] = DeepCopy(v).(interface{})
+			clone[k] = DeepCopy(v)
 		}
 
 		return clone

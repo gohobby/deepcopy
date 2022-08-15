@@ -21,7 +21,11 @@ func AllCases(types Statement, src, mainFunc Code) Statement {
 
 	// map[string]interface{}
 	statement = append(statement, jenutils.CaseType(Map(String()).Interface(), src, func(value, t Code) Statement {
-		return deepCopy(t, value, clone, mainFunc)
+		s := Statement{Line()}
+		s = append(s, jenutils.InterfaceCopy(t, value, clone, mainFunc)...)
+		s = append(s, Line(), Return(clone))
+
+		return s
 	}))
 
 	statement = append(statement, Comment("Deep copy for types map[string][]T"))

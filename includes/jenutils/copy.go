@@ -23,3 +23,13 @@ func DeepCopy(t, src, dst, recursiveFunc Code) Statement {
 		),
 	}
 }
+
+func InterfaceCopy(t, src, dst, recursiveFunc Code) Statement {
+	return Statement{
+		Add(dst).Op(":=").Make(t, Len(src)),
+		Line(),
+		Foreach(src).Block(
+			Add(dst).Index(Id("k")).Op("=").Add(recursiveFunc).Parens(Id("v")),
+		),
+	}
+}
