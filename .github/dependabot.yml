@@ -5,21 +5,16 @@
 
 version: 2
 updates:
-  - package-ecosystem: github-actions
-    directory: /
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
     labels:
-      - dependencies
-      - actions
-     schedule:
-       interval: daily
-     assignees:
-       - hgtgh
-  - package-ecosystem: gomod
-    directory: /
+      - "🤖 Dependencies"
+
+  - package-ecosystem: "gomod"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
     labels:
-      - dependencies
-      - go
-     schedule:
-       interval: daily
-     assignees:
-       - hgtgh
+      - "🤖 Dependencies"
