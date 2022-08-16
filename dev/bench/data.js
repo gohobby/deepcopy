@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1660649776465,
+  "lastUpdate": 1660649806900,
   "repoUrl": "https://github.com/gohobby/deepcopy",
   "entries": {
     "Benchmark": [
@@ -216,6 +216,42 @@ window.BENCHMARK_DATA = {
             "value": 1806,
             "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
             "extra": "633103 times\n2 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "27848278+hgtgh@users.noreply.github.com",
+            "name": "Hugo-T",
+            "username": "hgtgh"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "039f2d618ca9a15180776720702b7dd2bb174dc2",
+          "message": "docs: create contributing and COC (#11)",
+          "timestamp": "2022-08-16T13:36:00+02:00",
+          "tree_id": "c589999706047594ef3164dc8ebd5caf6344916a",
+          "url": "https://github.com/gohobby/deepcopy/commit/039f2d618ca9a15180776720702b7dd2bb174dc2"
+        },
+        "date": 1660649806001,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkCopyableMap",
+            "value": 1748,
+            "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
+            "extra": "678013 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkDeepCopy_Map",
+            "value": 1747,
+            "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
+            "extra": "710755 times\n2 procs"
           }
         ]
       }
