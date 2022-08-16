@@ -1,5 +1,11 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
+
+template: |
+  $CHANGES
+  
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+
 categories:
   - title: '🚀 New'
     labels:
@@ -14,8 +20,10 @@ categories:
   - title: '📚 Documentation'
     labels:
       - '📒 Documentation'
+
 change-template: '- $TITLE (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+
 version-resolver:
   major:
     labels:
@@ -32,6 +40,7 @@ version-resolver:
       - '🤖 Dependencies'
       - '🧹 Updates'
   default: patch
+
 autolabeler:
   - label: '📒 Documentation'
     title:
@@ -88,7 +97,3 @@ autolabeler:
       - '/✨/i'
       - '/🔥/i'
 
-template: |
-  $CHANGES
-  
-  Thank you $CONTRIBUTORS for making this update possible.
