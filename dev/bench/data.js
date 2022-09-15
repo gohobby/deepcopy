@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1660649806900,
+  "lastUpdate": 1663274147807,
   "repoUrl": "https://github.com/gohobby/deepcopy",
   "entries": {
     "Benchmark": [
@@ -252,6 +252,42 @@ window.BENCHMARK_DATA = {
             "value": 1747,
             "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
             "extra": "710755 times\n2 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8c4a77f6ba4d09f9185dffc9082a5b5ea6cf3d6f",
+          "message": "chore(deps): bump actions/checkout from 2 to 3 (#12)\n\nBumps [actions/checkout](https://github.com/actions/checkout) from 2 to 3.\r\n- [Release notes](https://github.com/actions/checkout/releases)\r\n- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)\r\n- [Commits](https://github.com/actions/checkout/compare/v2...v3)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: actions/checkout\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-major\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2022-09-15T22:35:14+02:00",
+          "tree_id": "884bc86df56b69e7e19f16f49847fab151f0aa3b",
+          "url": "https://github.com/gohobby/deepcopy/commit/8c4a77f6ba4d09f9185dffc9082a5b5ea6cf3d6f"
+        },
+        "date": 1663274146955,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkCopyableMap",
+            "value": 1614,
+            "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
+            "extra": "754414 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkDeepCopy_Map",
+            "value": 1630,
+            "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
+            "extra": "645687 times\n2 procs"
           }
         ]
       }
