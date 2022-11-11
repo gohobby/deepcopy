@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1663274147807,
+  "lastUpdate": 1668204179045,
   "repoUrl": "https://github.com/gohobby/deepcopy",
   "entries": {
     "Benchmark": [
@@ -288,6 +288,42 @@ window.BENCHMARK_DATA = {
             "value": 1630,
             "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
             "extra": "645687 times\n2 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "89d11c7379ae3078e1df9c157161e07335a52294",
+          "message": "chore(deps): bump github.com/dave/jennifer from 1.5.1 to 1.6.0 (#13)\n\nBumps [github.com/dave/jennifer](https://github.com/dave/jennifer) from 1.5.1 to 1.6.0.\r\n- [Release notes](https://github.com/dave/jennifer/releases)\r\n- [Commits](https://github.com/dave/jennifer/compare/v1.5.1...v1.6.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: github.com/dave/jennifer\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2022-11-11T23:02:30+01:00",
+          "tree_id": "cc3543a82849fa3be9edf7cc37b5731dadb60a07",
+          "url": "https://github.com/gohobby/deepcopy/commit/89d11c7379ae3078e1df9c157161e07335a52294"
+        },
+        "date": 1668204177751,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkCopyableMap",
+            "value": 1776,
+            "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
+            "extra": "652641 times\n2 procs"
+          },
+          {
+            "name": "BenchmarkDeepCopy_Map",
+            "value": 1767,
+            "unit": "ns/op\t    1248 B/op\t      16 allocs/op",
+            "extra": "675150 times\n2 procs"
           }
         ]
       }
